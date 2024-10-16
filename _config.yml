@@ -121,7 +121,8 @@ og_image: # The site-wide (default for all links) Open Graph preview image
 google_analytics: G-36YLVN82FY # your Google Analytics measurement ID (format: G-XXXXXXXXXX)
 
 # For Google Search Console, see https://support.google.com/webmasters/answer/9008080?hl=en#meta_tag_verification&zippy=%2Chtml-tag
-google_site_verification: OZLUyPxig4YUlUzgtCa4G1lxtWl1S-AbEU-xN3g_OEs # your google-site-verification ID (Google Search Console)
+google_site_verification: 7qLXE-KuWT2sNWM_uappxGev3ZoPOpM4ULSXUXsbQlo # your google-site-verification ID (Google Search Console)
+#OZLUyPxig4YUlUzgtCa4G1lxtWl1S-AbEU-xN3g_OEs
 bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 
 # -----------------------------------------------------------------------------
