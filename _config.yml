@@ -30,6 +30,7 @@ repo_theme_dark: dark
 # -----------------------------------------------------------------------------
 
 navbar_fixed: true
+enable_progressbar: false
 footer_fixed: false
 search_enabled: true
 socials_in_search: true
