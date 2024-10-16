@@ -396,28 +396,30 @@ ul.task-list input[type="checkbox"] {
     justify-content: center;
     align-items: center;
     font-size: 3vw;
-    gap: calc(2vw + 5px);
+    row-gap: calc(5px + 2vw);
+    column-gap: calc(5px + 2vw);
+  }
 
-    width: 100%;
-    box-sizing: border-box;
+  width: 100%;
+  box-sizing: border-box;
 
-    a {
+  a {
+    i::before {
+      color: var(--global-text-color);
+      transition-property: all 0.2s ease-in-out;
+    }
+
+    &:hover {
       i::before {
-        color: var(--global-text-color);
-        transition-property: all 0.2s ease-in-out;
-      }
-
-      &:hover {
-        i::before {
-          color: var(--global-theme-color);
-        }
+        color: var(--global-theme-color);
       }
     }
   }
+}
 
-  .contact-note {
-    font-size: 0.8rem;
-  }
+.contact-note {
+  font-size: 0.8rem;
+}
 }
 
 .wechat-modal {
