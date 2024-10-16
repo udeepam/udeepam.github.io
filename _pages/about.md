@@ -5,7 +5,7 @@ permalink: /
 subtitle:
 
 profile:
-  align: right
+  align: left
   image: profile_pic.png
   image_circular: false
   more_info: >
