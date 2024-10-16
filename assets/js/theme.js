@@ -1,30 +1,74 @@
 // Has to be in the head tag, otherwise a flicker effect will occur.
 
-// Toggle through light, dark, and system theme settings.
-let toggleThemeSetting = () => {
+// Determine the expected state of the theme toggle, which can be "dark", "light", or
+// "system". Default is "system".
+let determineThemeSetting = () => {
+  let themeSetting = localStorage.getItem("theme");
+  if (themeSetting != "dark" && themeSetting != "light" && themeSetting != "system") {
+    themeSetting = "system";
+  }
+  return themeSetting;
+};
+
+// Determine the computed theme, which can be "dark" or "light". If the theme setting is
+// "system", the computed theme is determined based on the user's system preference.
+let determineComputedTheme = () => {
   let themeSetting = determineThemeSetting();
   if (themeSetting == "system") {
-    setThemeSetting("light");
-  } else if (themeSetting == "light") {
-    setThemeSetting("dark");
+    const userPref = window.matchMedia;
+    if (userPref && userPref("(prefers-color-scheme: dark)").matches) {
+      return "dark";
+    } else {
+      return "light";
+    }
   } else {
-    setThemeSetting("system");
+    return themeSetting;
   }
 };
 
+// Update the icons based on the current theme (light or dark)
+let updateThemeIcons = (theme) => {
+  // Get the icon elements
+  const lightIcon = document.getElementById("light-toggle-light");
+  const darkIcon = document.getElementById("light-toggle-dark");
+
+  // Show or hide icons based on the current theme
+  if (theme === "dark") {
+    darkIcon.style.display = "inline";  // Show dark mode icon (moon)
+    lightIcon.style.display = "none";   // Hide light mode icon (sun)
+  } else {
+    darkIcon.style.display = "none";    // Hide dark mode icon (moon)
+    lightIcon.style.display = "inline"; // Show light mode icon (sun)
+  }
+};
+
+let initTheme = () => {
+  let theme = determineComputedTheme();
+  setThemeSetting(theme);
+
+  // Add event listener to the theme toggle button.
+  document.addEventListener("DOMContentLoaded", function () {
+    const mode_toggle = document.getElementById("light-toggle");
+    mode_toggle.addEventListener("click", function () {
+      toggleThemeSetting();
+    });
+  });
+
+  // Add event listener to the system theme preference change.
+  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", ({ matches }) => {
+    applyTheme();
+  });
+};
+
 // Change the theme setting and apply the theme.
-let setThemeSetting = (themeSetting) => {
-  localStorage.setItem("theme", themeSetting);
-
-  document.documentElement.setAttribute("data-theme-setting", themeSetting);
-
-  applyTheme();
+let setThemeSetting = (theme) => {
+  localStorage.setItem("theme", theme);
+  document.documentElement.setAttribute("data-theme-setting", theme);
+  applyTheme(theme);
 };
 
 // Apply the computed dark or light theme to the website.
-let applyTheme = () => {
-  let theme = determineComputedTheme();
-
+let applyTheme = (theme) => {
   transTheme();
   setHighlight(theme);
   setGiscusTheme(theme);
@@ -81,6 +125,8 @@ let applyTheme = () => {
       background: getComputedStyle(document.documentElement).getPropertyValue("--global-bg-color") + "ee", // + 'ee' for trasparency.
     });
   }
+
+  updateThemeIcons(theme);
 };
 
 let setHighlight = (theme) => {
@@ -205,48 +251,12 @@ let transTheme = () => {
   }, 500);
 };
 
-// Determine the expected state of the theme toggle, which can be "dark", "light", or
-// "system". Default is "system".
-let determineThemeSetting = () => {
-  let themeSetting = localStorage.getItem("theme");
-  if (themeSetting != "dark" && themeSetting != "light" && themeSetting != "system") {
-    themeSetting = "system";
-  }
-  return themeSetting;
-};
-
-// Determine the computed theme, which can be "dark" or "light". If the theme setting is
-// "system", the computed theme is determined based on the user's system preference.
-let determineComputedTheme = () => {
-  let themeSetting = determineThemeSetting();
-  if (themeSetting == "system") {
-    const userPref = window.matchMedia;
-    if (userPref && userPref("(prefers-color-scheme: dark)").matches) {
-      return "dark";
-    } else {
-      return "light";
-    }
+// Toggle through light, dark, and system theme settings.
+let toggleThemeSetting = () => {
+  let themeSetting = determineComputedTheme();
+  if (themeSetting == "light") {
+    setThemeSetting("dark");
   } else {
-    return themeSetting;
+    setThemeSetting("system");
   }
-};
-
-let initTheme = () => {
-  let themeSetting = determineThemeSetting();
-
-  setThemeSetting(themeSetting);
-
-  // Add event listener to the theme toggle button.
-  document.addEventListener("DOMContentLoaded", function () {
-    const mode_toggle = document.getElementById("light-toggle");
-
-    mode_toggle.addEventListener("click", function () {
-      toggleThemeSetting();
-    });
-  });
-
-  // Add event listener to the system theme preference change.
-  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", ({ matches }) => {
-    applyTheme();
-  });
 };
