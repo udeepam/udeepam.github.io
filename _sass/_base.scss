@@ -386,8 +386,20 @@ ul.task-list input[type="checkbox"] {
 .social {
   text-align: center;
 
+  width: 100%;
+  overflow: hidden;
+
   .contact-icons {
-    font-size: 4rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    font-size: 3vw;
+    gap: calc(2vw + 5px);
+
+    width: 100%;
+    box-sizing: border-box;
 
     a {
       i::before {
