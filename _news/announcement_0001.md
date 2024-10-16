@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-<a href="https://arxiv.org/abs/1906.00254">Super-resolution of time-series labels for bootstrapped event detection</a> has been accepted at <a href="https://roseyu.com/time-series-workshop/index_2019.html#introduction">ICML Time Series Workshop 2019</a>.
+<a href="https://arxiv.org/abs/1906.00254">Super-resolution of time-series labels for bootstrapped event detection</a> has been accepted at <a href="https://roseyu.com/time-series-workshop/index_2019.html">ICML Time Series Workshop 2019</a>.
