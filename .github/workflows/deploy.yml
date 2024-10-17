@@ -16,7 +16,6 @@ on:
       - "Gemfile"
       - "Gemfile.lock"
       - "!.github/workflows/broken-links.yml"
-      - "!.github/workflows/deploy-image.yml"
       - "!.github/workflows/prettier.yml"
       - "!README.md"
   pull_request:
@@ -34,7 +33,6 @@ on:
       - "Gemfile"
       - "Gemfile.lock"
       - "!.github/workflows/broken-links.yml"
-      - "!.github/workflows/deploy-image.yml"
       - "!.github/workflows/prettier.yml"
       - "!README.md"
   workflow_dispatch:
