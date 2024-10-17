@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-<a href="https://arxiv.org/abs/1906.00254">Super-resolution of time-series labels for bootstrapped event detection</a> has been accepted at <a href="https://roseyu.com/time-series-workshop/index_2019.html">ICML Time Series Workshop 2019</a>.
+Interning at the <a href="https://oxford-man.ox.ac.uk/">Oxford-Man Institute of Quantitative Finance</a> supervised by <a href="https://eng.ox.ac.uk/people/stefan-zohren/">Stefan Zohren</a>!
