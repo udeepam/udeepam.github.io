@@ -26,7 +26,6 @@ repo_theme_dark: dark
 # Layout
 # -----------------------------------------------------------------------------
 
-footer_fixed: false
 search_enabled: true
 socials_in_search: false
 bib_search: false
