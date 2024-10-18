@@ -119,16 +119,6 @@
         {%- endif -%}
       {%- endfor -%}
       {%- if site.socials_in_search -%}
-        {%- if site.email -%}
-          {
-            id: 'socials-email',
-            title: 'Send email',
-            section: 'Socials',
-            handler: () => {
-              window.open("mailto:{{ site.email | encode_email }}", "_blank");
-            },
-          },
-        {%- endif -%}
         {%- if site.telegram_username -%}
           {
             id: 'socials-telegram',
