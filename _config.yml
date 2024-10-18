@@ -26,8 +26,6 @@ repo_theme_dark: dark
 # Layout
 # -----------------------------------------------------------------------------
 
-avatar: profile_pic.png
-
 navbar_fixed: true
 footer_fixed: false
 search_enabled: true
