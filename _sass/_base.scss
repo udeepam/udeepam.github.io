@@ -399,8 +399,7 @@ ul.task-list input[type="checkbox"] {
     align-items: center;
     font-size: 3vw;
 
-    row-gap: calc(5px + 2vw);
-    column-gap: calc(5px + 2vw);
+    gap: calc(5px + 2vw);
   }
 
   width: 100%;
