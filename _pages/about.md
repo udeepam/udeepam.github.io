@@ -15,7 +15,7 @@ selected_papers: false
 social: true # includes social icons at the bottom of the page
 ---
 
-Hi there 👋🏾!
+Hi, I'm Udeepa 👋🏾!
 
 I'm a research engineer at <a href="https://novoic.com/">Novoic</a>. I focus on pre-training and fine-tuning large language models and multimodal models for the early-stage detection of Alzheimer's disease from a patient's speech.
 

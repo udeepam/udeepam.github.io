@@ -3,8 +3,10 @@
 ---
 @charset "utf-8";
 
-// Dimensions
-$max-content-width: {{ site.max_width }};
+html {
+  // Fix scrollbar to prevent change in width.
+  overflow-y: scroll;
+}
 
 @import
   "variables",
