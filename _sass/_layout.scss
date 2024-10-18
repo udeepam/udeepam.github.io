@@ -3,6 +3,9 @@
  ******************************************************************************/
 
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure the body takes up the full viewport height */
   padding-bottom: 70px;
   color: var(--global-text-color);
   background-color: var(--global-bg-color);
@@ -29,6 +32,7 @@ body.sticky-bottom-footer {
 }
 
 .container {
+  flex-grow: 1; /* Make the content area take up all available space */
   width: 100%;
   max-width: 80%;
   padding-left: 0;

@@ -397,7 +397,7 @@ ul.task-list input[type="checkbox"] {
     justify-content: center;
     align-items: center;
     font-size: 3vw;
-    gap: 3vw;
+    gap: 2vw;
   }
 
   width: 100%;
@@ -475,8 +475,8 @@ footer.fixed-bottom {
 
 footer.sticky-bottom {
   border-top: 1px solid var(--global-divider-color);
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   font-size: 0.9rem;
 
   .container {
