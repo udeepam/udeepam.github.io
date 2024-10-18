@@ -23,7 +23,9 @@
     {% capture title %}{{ site.title }}{% endcapture %}
   {% endif %}
   {% if page.url == '/blog/index.html' %}
-    {{ page.title }} | {{ title }}
+    {{ site.blog_name }}
+  {% elsif page.url contains '/blog/' and page.url | slice: 0, 6 == '/blog/' %}
+    {{ page.title }} | {{ site.blog_name }}
   {% elsif page.title != 'blank' and page.url != '/' %}
     {% if page.title == null or page.title == '' %}
       {{ page.date | date: '%Y' }} | {{ title }}

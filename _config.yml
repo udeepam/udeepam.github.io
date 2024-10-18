@@ -65,7 +65,7 @@ latest_posts:
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: Posts
+blog_name: Udeepa's Blog
 blog_description:
 permalink: /blog/:year/:title/
 lsi: false # produce an index for related posts
