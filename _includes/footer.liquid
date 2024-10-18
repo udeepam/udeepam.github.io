@@ -1,4 +1,9 @@
 <footer class="sticky-bottom mt-5" role="contentinfo">
+  {% if page.permalink != '/' %}
+    <div class="social">
+      <div class="contact-icons">{% include social.liquid %}</div>
+    </div>
+  {% endif %}
   <div class="container">
     &copy; {{ site.time | date: '%Y' }}
     {{ site.first_name }}

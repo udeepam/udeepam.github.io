@@ -65,8 +65,8 @@ latest_posts:
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: 👋🏾 udeepa # blog_name will be displayed in your blog page
-blog_description: A place to learn and share knowledge.
+blog_name: Posts
+blog_description:
 permalink: /blog/:year/:title/
 lsi: false # produce an index for related posts
 

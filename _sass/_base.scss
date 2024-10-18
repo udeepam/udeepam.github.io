@@ -244,6 +244,10 @@ ul.task-list input[type="checkbox"] {
   }
 }
 
+#markdown-content {
+  padding-top: 2rem; /* Padding before the post content */
+}
+
 // Navbar customization
 
 .navbar {
@@ -482,6 +486,27 @@ footer.sticky-bottom {
   .container {
     text-align: center;
   }
+  .social {
+    text-align: center;
+
+    .contact-icons {
+      font-size: 1.7rem;
+      gap: 1em;
+    }
+
+    a {
+      i::before {
+        color: var(--global-text-color);
+        transition-property: all 0.2s ease-in-out;
+      }
+
+      &:hover {
+        i::before {
+          color: var(--global-theme-color);
+        }
+      }
+    }
+  }
 }
 
 // CV
@@ -529,7 +554,7 @@ footer.sticky-bottom {
 .header-bar {
   border-bottom: 1px solid var(--global-divider-color);
   text-align: center;
-  padding-top: 2rem;
+  padding-top: 0;
   padding-bottom: 3rem;
 
   h1 {
