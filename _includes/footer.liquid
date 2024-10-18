@@ -4,9 +4,6 @@
       &copy; Copyright {{ site.time | date: '%Y' }}
       {{ site.first_name }}
       {{ site.last_name }}.
-      {% if site.impressum_path %}
-        <a href="{{ site.url }}{{ site.baseurl }}{{ site.impressum_path }}">Impressum</a>.
-      {% endif %}
     </div>
   </footer>
 {% else %}
@@ -19,9 +16,6 @@
       &copy; {{ site.time | date: '%Y' }}
       {{ site.first_name }}
       {{ site.last_name }}.
-      {% if site.impressum_path %}
-        <a href="{{ site.url }}{{ site.baseurl }}{{ site.impressum_path }}">Impressum</a>.
-      {% endif %}
     </div>
   </footer>
 {% endif %}
