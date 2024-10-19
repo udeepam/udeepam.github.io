@@ -244,6 +244,46 @@ ul.task-list input[type="checkbox"] {
   }
 }
 
+// Social (about)
+
+.social {
+  text-align: center;
+  overflow: hidden;
+
+  .contact-icons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    font-size: 3vw;
+    gap: 2vw;
+  }
+
+  width: 100%;
+  box-sizing: border-box;
+
+  a {
+    i::before {
+      color: var(--global-text-color);
+      transition-property: all 0.2s ease-in-out;
+    }
+
+    &:hover {
+      i::before {
+        color: var(--global-theme-color);
+      }
+    }
+  }
+  // Add a media query for smaller screens to ensure social icons resize properly
+  @media (max-width: 576px) {
+    .contact-icons {
+      font-size: 2.5rem;
+      gap: 1.5rem;
+    }
+  }
+}
+
 // Navbar customization
 
 .navbar {
@@ -380,39 +420,6 @@ ul.task-list input[type="checkbox"] {
 
   &:hover {
     color: var(--global-hover-color);
-  }
-}
-
-// Social (about)
-.social {
-  text-align: center;
-
-  overflow: hidden;
-
-  .contact-icons {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    font-size: 3vw;
-    gap: 2vw;
-  }
-
-  width: 100%;
-  box-sizing: border-box;
-
-  a {
-    i::before {
-      color: var(--global-text-color);
-      transition-property: all 0.2s ease-in-out;
-    }
-
-    &:hover {
-      i::before {
-        color: var(--global-theme-color);
-      }
-    }
   }
 }
 
