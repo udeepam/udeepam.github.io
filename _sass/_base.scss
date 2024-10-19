@@ -461,7 +461,6 @@ footer.sticky-bottom {
 .header-bar {
   border-bottom: 1px solid var(--global-divider-color);
   text-align: left;
-  padding-top: 0;
   padding-bottom: 1rem;
 
   h1 {
@@ -552,6 +551,39 @@ footer.sticky-bottom {
         background-color: var(--global-theme-color);
       }
     }
+  }
+}
+
+// Distill style blog
+
+.distill-header {
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--global-divider-color);
+}
+
+.distill-left {
+  position: sticky;
+  top: 63px;
+  padding-top: 30px;
+  border-right: 1px solid var(--global-divider-color);
+  align-self: start;
+}
+
+.distill-right {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: bold;
+    padding-top: 30px;
+  }
+
+  padding-left: 50px;
+
+  @media (max-width: 576px) {
+    padding-left: 0;
   }
 }
 
@@ -822,6 +854,10 @@ html.transition *:after {
       margin-top: 0.5rem;
       margin-bottom: 0.5rem;
     }
+  }
+  ul li details {
+    // Space above details inside a list item
+    margin-top: 20px;
   }
 }
 

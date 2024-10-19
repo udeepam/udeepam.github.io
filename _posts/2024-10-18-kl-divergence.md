@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: distill
 title: Kullback-Leibler Divergence
 description:
 date: 2024-10-18

@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="{{ site.lang }}">
+  <!-- Head -->
+  <head>
+    {% if page.redirect %}
+      {% if page.redirect == true %}
+        {% assign redirect = site.baseurl | append: '/' %}
+      {% elsif page.redirect contains '://' %}
+        {% assign redirect = page.redirect %}
+      {% else %}
+        {% assign redirect = page.redirect | relative_url %}
+      {% endif %}
+      <meta http-equiv="refresh" content="3; url={{ redirect }}">
+    {% endif %}
+    {% include head.liquid %}
+  </head>
+
+  <!-- Body -->
+  <body class="fixed-top-nav sticky-bottom-footer">
+    <!-- Header -->
+    {% include header.liquid %}
+
+    <!-- Content -->
+    <div class="container mt-5" style="border-bottom: 1px solid var(--global-divider-color);" role="main">
+      <!-- header -->
+      <div class="row distill-header">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-10 distill-right">
+          <header class="post-header">
+            <h1 class="post-title">{{ page.title }}</h1>
+            <p class="post-meta">
+              {{ page.date | date: '%B %d, %Y' }}
+            </p>
+          </header>
+        </div>
+      </div>
+      <div class="row">
+        <!-- sidebar, which will move to the top on a small screen -->
+        <div class="col-sm-2 distill-left">
+          <nav id="toc-sidebar" class="sticky-top"></nav>
+        </div>
+        <!-- main content area -->
+        <div class="col-sm-10 distill-right">
+          {% assign year = page.date | date: '%Y' %}
+          {% assign tags = page.tags | join: '' %}
+          {% assign categories = page.categories | join: '' %}
+
+          {% if page._styles %}
+            <!-- Page/Post style -->
+            <style type="text/css">
+              {{ page._styles }}
+            </style>
+          {% endif %}
+
+          {% assign url_beginning = page.url | slice: 0, 6 %}
+
+          <div class="post">
+            <article class="post-content">
+              {{ content }}
+            </article>
+
+            {% if page.citation %}
+              {% include citation.liquid %}
+            {% endif %}
+
+            {% if page.related_publications %}
+              <h2>References</h2>
+              <div class="publications">
+                {% bibliography --cited_in_order %}
+              </div>
+            {% endif %}
+
+            {% if site.related_blog_posts.enabled %}
+              {% if page.related_posts == null or page.related_posts %}
+                {% include related_posts.liquid %}
+              {% endif %}
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% if site.giscus and page.giscus_comments %}
+      {% include giscus.liquid %}
+    {% endif %}
+
+    <!-- Footer -->
+    {% include footer.liquid %}
+
+    <!-- JavaScripts -->
+    {% include scripts/jquery.liquid %}
+    {% include scripts/bootstrap.liquid %}
+    {% include scripts/mermaid.liquid %}
+    {% include scripts/diff2html.liquid %}
+    {% include scripts/leaflet.liquid %}
+    {% include scripts/chartjs.liquid %}
+    {% include scripts/echarts.liquid %}
+    {% include scripts/vega.liquid %}
+    {% include scripts/tikzjax.liquid %}
+    {% include scripts/typograms.liquid %}
+    {% include scripts/misc.liquid %}
+    {% include scripts/badges.liquid %}
+    {% include scripts/mathjax.liquid %}
+    {% include scripts/pseudocode.liquid %}
+    {% include scripts/analytics.liquid %}
+    {% include scripts/imageLayouts.liquid %}
+    {% include scripts/jekyll_tabs.liquid %}
+    {% include scripts/search.liquid %}
+  </body>
+</html>
