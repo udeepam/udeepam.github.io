@@ -3,9 +3,10 @@
  ******************************************************************************/
 
 body {
+  // Ensure the body takes up the full viewport height
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Ensure the body takes up the full viewport height */
+  min-height: 100vh;
   padding-bottom: 70px;
   color: var(--global-text-color);
   background-color: var(--global-bg-color);
@@ -47,17 +48,3 @@ body.sticky-bottom-footer {
     width: 100%;
   }
 }
-
-// TODO: redefine content layout.
-
-/******************************************************************************
- * Publications
- ******************************************************************************/
-
-// TODO: redefine publications layout.
-
-/*****************************************************************************
-* Projects
-*****************************************************************************/
-
-// TODO: redefine projects layout.
