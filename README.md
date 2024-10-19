@@ -7,8 +7,7 @@
    brew install --cask docker
    ```
 2. Run `docker-compose`
-
-```
-docker-compose build;
-docker-compose up
-```
+   ```
+   docker-compose build;
+   docker-compose up
+   ```
