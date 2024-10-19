@@ -244,10 +244,6 @@ ul.task-list input[type="checkbox"] {
   }
 }
 
-#markdown-content {
-  padding-top: 2rem; /* Padding before the post content */
-}
-
 // Navbar customization
 
 .navbar {
@@ -387,7 +383,7 @@ ul.task-list input[type="checkbox"] {
   }
 }
 
-// Social (bottom)
+// Social (about)
 .social {
   text-align: center;
 
@@ -418,10 +414,6 @@ ul.task-list input[type="checkbox"] {
       }
     }
   }
-}
-
-.contact-note {
-  font-size: 0.8rem;
 }
 
 // Footer
@@ -875,6 +867,11 @@ html.transition *:after {
         color: var(--global-theme-color);
       }
     }
+  }
+
+  #markdown-content {
+    // Padding before the post content
+    padding-top: 2rem;
   }
 }
 
